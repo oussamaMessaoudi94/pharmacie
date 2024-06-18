@@ -1,0 +1,180 @@
+<app-nav-bar-index></app-nav-bar-index>
+<section class="login_box_area section_gap" style="margin-top: 30px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="login_box_img">
+          <img class="img-fluid" src="assets/images/bg_2.jpg" alt="">
+          <div class="hover">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="login_form_inner">
+          <h3 style="text-align: center; color: black; font-weight: bold;">Signup please</h3>
+          <div [formGroup]="signupForm">
+            <div class="col-md-12 form-group">
+              <input type="text" class="form-control" formControlName="firstName" required="required" name="name"
+                placeholder="First name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'FirstName'">
+              <div
+                *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].dirty || signupForm.controls['firstName'].touched)">
+                <div *ngIf="signupForm.controls['firstName'].errors?.['required']" style="color: red;">First name is empty</div>
+              </div>
+            </div>
+            <div class="col-md-12 form-group">
+              <input type="text" class="form-control" formControlName="lastName" required="required" name="name" placeholder="Last Name"
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'LastName'">
+                <div *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].dirty || signupForm.controls['lastName'].touched)">
+                  <div *ngIf="signupForm.controls['lastName'].errors?.['required']" style="color: red;">Last name is empty</div>
+                </div>
+            </div>
+            <div class="col-md-12 form-group">
+              <input type="email" class="form-control" formControlName="email" required="required" name="name" placeholder="Email"
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
+                <div *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)">
+                  <div *ngIf="signupForm.controls['email'].errors?.['required']" style="color: red;">Email is empty</div>
+                  <div *ngIf="signupForm.controls['email'].errors?.['email']" style="color: red;">Email is not correct</div>
+                </div>
+            </div>
+            <span id="emailError"></span>
+            <div class="col-md-12 form-group">
+              <input type="password" class="form-control" id="password" formControlName="password" required="required" name="name" placeholder="Password"
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+                <div *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)">
+                  <div *ngIf="signupForm.controls['password'].errors?.['required']" style="color: red;">Password is empty</div>
+                  <div *ngIf="signupForm.controls['password'].errors?.['minlength']" style="color: red;">Password minimum 6 word</div>
+                  <div *ngIf="signupForm.controls['password'].errors?.['maxlength']" style="color: red;">Password maximum 9 word</div>
+                </div>
+            </div>
+            <div class="col-md-12 form-group">
+              <input type="password" class="form-control" id="confirm_password" formControlName="confPwd" required="required" name="name" placeholder="Confirm password"
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirmpassword'">
+                <div *ngIf="signupForm.controls['confPwd'].invalid && (signupForm.controls['confPwd'].dirty || signupForm.controls['confPwd'].touched)">
+                  <div *ngIf="signupForm.controls['confPwd'].errors?.['required']" style="color: red;">Password is empty</div>
+                </div>
+                <span id='message'></span>
+            </div>
+            <div class="col-md-12 form-group">
+              <input type="tel" class="form-control" id="tel" formControlName="tel" required="required" name="name" placeholder="Tel"
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'TEl'">
+                <div *ngIf="signupForm.controls['tel'].invalid && (signupForm.controls['tel'].dirty || signupForm.controls['tel'].touched)">
+                  <div *ngIf="signupForm.controls['tel'].errors?.['required']" style="color: red;">Password is empty</div>
+                  <div *ngIf="signupForm.controls['tel'].errors?.['minlength']" style="color: red;">Password minimum 8 word</div>
+                  <div *ngIf="signupForm.controls['tel'].errors?.['maxlength']" style="color: red;">Password maximum 8 word</div>
+                </div>
+            </div>
+            <div class="col-md-12 form-group">
+              <button type="submit" value="submit" class="btn btn-danger btn-block" id="primary-btn"
+                (click)="signup(signupForm.value)">signUp</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="site-section bg-image overlay" style="background-image: url('assets/images/hero_bg_2.jpg');">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-7">
+        <h3 class="text-white">GO</h3>
+        <p class="mb-0"><a href="login" class="btn btn-outline-white">Login</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="site-section">
+  <div class="container">
+
+    <div class="row justify-content-between">
+      <div class="col-lg-6">
+        <div class="title-section">
+          <h2>Happy <strong class="text-primary">Customers</strong></h2>
+        </div>
+        <div class="block-3 products-wrap">
+          <div class="owl-single no-direction owl-carousel">
+
+            <div class="testimony">
+              <blockquote>
+                <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                <p>&ldquo;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur
+                  quam tempore obcaecati maiores voluptate aspernatur iusto eveniet, placeat ab quod tenetur ducimus.
+                  Minus ratione sit quaerat unde.&rdquo;</p>
+              </blockquote>
+
+              <p class="author">&mdash; Kelly Holmes</p>
+            </div>
+
+            <div class="testimony">
+              <blockquote>
+                <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                <p>&ldquo;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur
+                  quam tempore
+                  obcaecati maiores voluptate aspernatur iusto eveniet, placeat ab quod tenetur ducimus. Minus ratione
+                  sit quaerat
+                  unde.&rdquo;</p>
+              </blockquote>
+
+              <p class="author">&mdash; Rebecca Morando</p>
+            </div>
+
+            <div class="testimony">
+              <blockquote>
+                <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                <p>&ldquo;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur
+                  quam tempore
+                  obcaecati maiores voluptate aspernatur iusto eveniet, placeat ab quod tenetur ducimus. Minus ratione
+                  sit quaerat
+                  unde.&rdquo;</p>
+              </blockquote>
+
+              <p class="author">&mdash; Lucas Gallone</p>
+            </div>
+
+            <div class="testimony">
+              <blockquote>
+                <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+                <p>&ldquo;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur
+                  quam tempore
+                  obcaecati maiores voluptate aspernatur iusto eveniet, placeat ab quod tenetur ducimus. Minus ratione
+                  sit quaerat
+                  unde.&rdquo;</p>
+              </blockquote>
+
+              <p class="author">&mdash; Andrew Neel</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="title-section">
+          <h2 class="mb-5">Why <strong class="text-primary">Us</strong></h2>
+          <div class="step-number d-flex mb-4">
+            <span>1</span>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur quam tempore
+            </p>
+          </div>
+
+          <div class="step-number d-flex mb-4">
+            <span>2</span>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur quam tempore
+            </p>
+          </div>
+
+          <div class="step-number d-flex mb-4">
+            <span>3</span>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur quam tempore
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

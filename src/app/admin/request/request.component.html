@@ -1,0 +1,30 @@
+<app-nav-bar-admin></app-nav-bar-admin>>
+<main>
+    <div id="pagination" style="text-align: center;">
+        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+      </div> 
+    <div class="table-wrapper">
+      <table >
+      <thead>
+        <tr >
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th style="text-align: center;">email</th>
+          <th>Phone</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody  id="paginatedTable">
+        <tr *ngFor="let xx of xx   | paginate:{itemsPerPage: 5, currentPage:p }  let i=index">
+          <td>{{i+1}}</td>
+          <td>{{xx.fName}}</td>
+          <td>{{xx.lName}}</td>
+          <td>{{xx.email}}</td>
+          <td>{{xx.phone}}</td>
+          <td><button class="button button5" (click)="print(xx._id)" >Print</button><button class="button button5" (click)="delete(xx._id)" >Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </main>

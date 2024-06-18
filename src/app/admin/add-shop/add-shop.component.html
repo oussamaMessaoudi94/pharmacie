@@ -1,0 +1,179 @@
+<body>
+    <app-nav-bar-admin></app-nav-bar-admin>
+    <div class="bg-light py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mb-0">
+                    <a href="indexAdmin">Home</a> <span class="mx-2 mb-0">/</span>
+                    <strong class="text-black">Add-shop</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-wrap">
+        <section class="login_box_area section_gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="login_box_img">
+                            <img class="img-fluid" src="assets/images/bg_2.jpg" alt="">
+                            <div class="hover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="login_form_inner">
+                            <h3 style="text-align: center; color: black; font-weight: bold;">{{title}}</h3>
+                            <div [formGroup]="productForm">
+                                <div class="col-md-12 form-group"> 
+                                    <input type="text" class="form-control" formControlName="proN" required="required" [(ngModel)]="pro.proN"
+                                        name="name" placeholder="productName" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Product Name'">
+                                    <div *ngIf="productForm.controls['proN'].invalid && (productForm.controls['proN'].dirty || productForm.controls['proN'].touched)">
+                                        <div *ngIf="productForm.controls['proN'].errors?.['required']">product name is empty</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <input type="number" class="form-control" formControlName="price" required="required" [(ngModel)]="pro.price"
+                                        name="name" placeholder="Price" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Price'">
+                                        <div *ngIf="productForm.controls['price'].invalid && (productForm.controls['price'].dirty || productForm.controls['price'].touched)">
+                                            <div *ngIf="productForm.controls['price'].errors?.['required']">product name is empty</div>
+                                        </div>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <input type="number" class="form-control" formControlName="quantity" 
+                                        required="required" [(ngModel)]="pro.quantity" name="name" placeholder="Quantity"
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Quantity'">
+                                        <div *ngIf="productForm.controls['quantity'].invalid && (productForm.controls['quantity'].dirty || productForm.controls['quantity'].touched)">
+                                            <div *ngIf="productForm.controls['quantity'].errors?.['required']">product name is empty</div>
+                                        </div>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <select class="form-control" name="billing_city" formControlName="mark"
+                                        required="required" [(ngModel)]="pro.mark">
+                                        <option value="" disabled selected>Mark</option>
+                                        <option value="parapharmacy">parapharmacy</option>
+                                        <option value="Medicine">Medicine</option>
+                                    </select>
+                                </div>
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here"
+                                        formControlName="description" required="required" [(ngModel)]="pro.description"
+                                        style="height: 100px; width: 515px; margin-left: 13px;"></textarea>
+                                </div>
+                                <label for="UrunImage" class="form-label">Product Image</label>
+                                <input type="file" (click)='filePicker.click()' class="form-control" name="UrunImage"
+                                    id="UrunImage">
+                                <div style="visibility: hidden;">
+                                    <div class="form_title">image</div>
+                                    <input type="file" class="comment_input" required="required" #filePicker
+                                        (change)='onImageSelected($event)'>
+                                </div>
+                                <img [src]="imagePreview" *ngIf='imagePreview' width="30%" style="margin-bottom: 5%;">
+
+                                <div class="col-md-12 form-group">
+                                    <button type="submit" value="submit" class="btn btn-danger btn-block"
+                                        id="primary-btn" (click)="addProduct(productForm.value)">ADD PRODUCT</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="site-section">
+            <div class="container">
+
+                <div class="row justify-content-between">
+                    <div class="col-lg-6">
+                        <div class="title-section">
+                            <h2>Happy <strong class="text-primary">Customers</strong></h2>
+                        </div>
+                        <div class="block-3 products-wrap">
+                            <div class="owl-single no-direction owl-carousel">
+
+                                <div class="testimony">
+                                    <blockquote>
+                                        <img src="assets/images/person_1.jpg" alt="Image" class="img-fluid">
+                                        <p>&ldquo;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis
+                                            voluptatem consectetur quam tempore obcaecati maiores voluptate aspernatur
+                                            iusto eveniet, placeat ab quod tenetur ducimus. Minus ratione sit quaerat
+                                            unde.&rdquo;</p>
+                                    </blockquote>
+
+                                    <p class="author">&mdash; Kelly Holmes</p>
+                                </div>
+
+                                <div class="testimony">
+                                    <blockquote>
+                                        <img src="assets/images/person_2.jpg" alt="Image" class="img-fluid">
+                                        <p>&ldquo;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis
+                                            voluptatem consectetur quam tempore
+                                            obcaecati maiores voluptate aspernatur iusto eveniet, placeat ab quod
+                                            tenetur ducimus. Minus ratione sit quaerat
+                                            unde.&rdquo;</p>
+                                    </blockquote>
+
+                                    <p class="author">&mdash; Rebecca Morando</p>
+                                </div>
+
+                                <div class="testimony">
+                                    <blockquote>
+                                        <img src="assets/images/person_3.jpg" alt="Image" class="img-fluid">
+                                        <p>&ldquo;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis
+                                            voluptatem consectetur quam tempore
+                                            obcaecati maiores voluptate aspernatur iusto eveniet, placeat ab quod
+                                            tenetur ducimus. Minus ratione sit quaerat
+                                            unde.&rdquo;</p>
+                                    </blockquote>
+
+                                    <p class="author">&mdash; Lucas Gallone</p>
+                                </div>
+
+                                <div class="testimony">
+                                    <blockquote>
+                                        <img src="assets/images/person_4.jpg" alt="Image" class="img-fluid">
+                                        <p>&ldquo;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis
+                                            voluptatem consectetur quam tempore
+                                            obcaecati maiores voluptate aspernatur iusto eveniet, placeat ab quod
+                                            tenetur ducimus. Minus ratione sit quaerat
+                                            unde.&rdquo;</p>
+                                    </blockquote>
+
+                                    <p class="author">&mdash; Andrew Neel</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="title-section">
+                            <h2 class="mb-5">Why <strong class="text-primary">Us</strong></h2>
+                            <div class="step-number d-flex mb-4">
+                                <span>1</span>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem
+                                    consectetur quam tempore</p>
+                            </div>
+
+                            <div class="step-number d-flex mb-4">
+                                <span>2</span>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem
+                                    consectetur quam tempore</p>
+                            </div>
+
+                            <div class="step-number d-flex mb-4">
+                                <span>3</span>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem
+                                    consectetur quam tempore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

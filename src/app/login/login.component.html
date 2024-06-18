@@ -1,0 +1,126 @@
+<app-nav-bar-index></app-nav-bar-index>
+<h1>aaaa</h1>
+<section class="login_box_area section_gap" style="margin-top: 30px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6" style="font-size: 30px;">
+                <div class="login_box_img">
+                    <img class="img-fluid" src="assets/images/bg_2.jpg" style="margin-bottom: 100px;" alt="">
+                    <div class="hover">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" style="font-size: 50px;">
+                <div class="login_form_inner" >
+                    <h3 style="text-align: center; color: black;">Log In to enter</h3>
+                    <form class="row login_form" action="#" method="post" novalidate="novalidate" (ngSubmit)="login()">
+                        <div class="col-md-12 form-group">
+                            <input type="email" class="form-control" name="name" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" required="">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input type="password" class="form-control" name="name" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" required="">
+                        </div>
+                        
+                        <div class="col-md-12 form-group">
+                            <button type="submit" value="submit" class="btn btn-danger btn-block">Log In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<div class="site-section bg-image overlay" style="background-image: url('assets/images/hero_bg_2.jpg');" >
+  <div class="container">
+    <div class="row justify-content-center text-center">
+     <div class="col-lg-7">
+       <h3 class="text-white">Create an Account</h3>
+       <p class="mb-0"><a href="signup" class="btn btn-outline-white">Sign up</a></p>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="site-section">
+  <div class="container">
+    
+    <div class="row justify-content-between">
+      <div class="col-lg-6">
+        <div class="title-section">
+          <h2>Happy <strong class="text-primary">Customers</strong></h2>
+        </div>
+        <div class="block-3 products-wrap">
+        <div class="owl-single no-direction owl-carousel">
+    
+          <div class="testimony">
+            <blockquote>
+              <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+              <p>&ldquo;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur quam tempore obcaecati maiores voluptate aspernatur iusto eveniet, placeat ab quod tenetur ducimus. Minus ratione sit quaerat unde.&rdquo;</p>
+            </blockquote>
+
+            <p class="author">&mdash; Kelly Holmes</p>
+          </div>
+    
+          <div class="testimony">
+            <blockquote>
+              <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+              <p>&ldquo;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur quam tempore
+                obcaecati maiores voluptate aspernatur iusto eveniet, placeat ab quod tenetur ducimus. Minus ratione sit quaerat
+                unde.&rdquo;</p>
+            </blockquote>
+          
+            <p class="author">&mdash; Rebecca Morando</p>
+          </div>
+    
+          <div class="testimony">
+            <blockquote>
+              <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+              <p>&ldquo;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur quam tempore
+                obcaecati maiores voluptate aspernatur iusto eveniet, placeat ab quod tenetur ducimus. Minus ratione sit quaerat
+                unde.&rdquo;</p>
+            </blockquote>
+          
+            <p class="author">&mdash; Lucas Gallone</p>
+          </div>
+    
+          <div class="testimony">
+            <blockquote>
+              <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+              <p>&ldquo;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur quam tempore
+                obcaecati maiores voluptate aspernatur iusto eveniet, placeat ab quod tenetur ducimus. Minus ratione sit quaerat
+                unde.&rdquo;</p>
+            </blockquote>
+          
+            <p class="author">&mdash; Andrew Neel</p>
+          </div>
+    
+        </div>
+      </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="title-section">
+          <h2 class="mb-5">Why <strong class="text-primary">Us</strong></h2>
+          <div class="step-number d-flex mb-4">
+            <span>1</span>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur quam tempore</p>
+          </div>
+
+          <div class="step-number d-flex mb-4">
+            <span>2</span>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur quam tempore</p>
+          </div>
+
+          <div class="step-number d-flex mb-4">
+            <span>3</span>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur quam tempore</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

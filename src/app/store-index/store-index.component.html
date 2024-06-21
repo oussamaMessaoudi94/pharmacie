@@ -1,0 +1,24 @@
+<app-nav-bar-index></app-nav-bar-index>
+<div class="bg-light py-3">
+    <div class="container">
+      <div class="">
+        <div class="col-md-12 mb-0"><a href="">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Store</strong></div>
+      </div>
+    </div>
+  </div>
+  
+
+    <div class="container">
+        <div class="row mx-auto content" >
+          <div class="col" *ngFor="let pro of pro | paginate:{itemsPerPage: 6, currentPage:p}">
+            <a href="login"> <img src="assets/images/{{pro.img}}" alt="Image"></a>
+            <h3 class="text-dark"><a href="login">{{pro.proN}}</a></h3>
+            <p class="price">{{pro.price.toLocaleString()}} TND</p>
+          </div>
+        </div>
+      </div>
+      <div id="pagination" style="text-align: center;">
+        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+      </div> 
+ 
+    

@@ -23,6 +23,7 @@ import { CheckoutUserComponent } from './user/checkout-user/checkout-user.compon
 import { ThanksUserComponent } from './user/thanks-user/thanks-user.component';
 import { RequestComponent } from './admin/request/request.component';
 import { ThanksAdminComponent } from './admin/thanks-admin/thanks-admin.component';
+import { StoreIndexComponent } from './store-index/store-index.component';
 
 const routes: Routes = [
   {path:'', component:IndexComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path:'addShop/:id', component:AddShopComponent},
   {path:'listShop', component:ListShopComponent},
   {path:'shop', component:ShopAdminComponent},
+  {path:'shop-index', component:StoreIndexComponent},
   {path:'shop-single', component:ShopAdminSingleComponent},
   {path:'shop-single/:id', component:ShopAdminSingleComponent},
   {path:'cart', component:CartComponent},

@@ -33,6 +33,7 @@ import { CheckoutUserComponent } from './user/checkout-user/checkout-user.compon
 import { ThanksUserComponent } from './user/thanks-user/thanks-user.component';
 import { RequestComponent } from './admin/request/request.component';
 import { ThanksAdminComponent } from './admin/thanks-admin/thanks-admin.component';
+import { StoreIndexComponent } from './store-index/store-index.component';
 
 
 
@@ -66,6 +67,7 @@ import { ThanksAdminComponent } from './admin/thanks-admin/thanks-admin.componen
     ThanksUserComponent,
     RequestComponent,
     ThanksAdminComponent,
+    StoreIndexComponent,
   ],
   imports: [
     BrowserModule,

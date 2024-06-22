@@ -15,6 +15,7 @@ export class ShopSingleUserComponent implements OnInit {
   shopS:any={}
   requestForm!:FormGroup
   users:any
+  msgError: any
   constructor(private productService:ProductService, private activatedRouter:ActivatedRoute, private fb:FormBuilder, private cartService:CartService, private cartService2: Cart2Service) { }
 
   ngOnInit(): void {
@@ -29,6 +30,8 @@ export class ShopSingleUserComponent implements OnInit {
       this.requestForm = this.fb.group({
         number:['']
       })
+      var id = '5ebadc45a99bde77b2efb20e'; 
+
   }
 
 
@@ -47,13 +50,22 @@ export class ShopSingleUserComponent implements OnInit {
     y.number = this.requestForm.value.number
     let z = (this.shopS.price * this.requestForm.value.number)
     y.somme = z
-    
-    this.cartService.addCart(y).subscribe(
+
+    if (this.requestForm.value.number > this.shopS.quantity) {
+      this.msgError = "number"
+      console.log(this.msgError);
+      
+    } else {
+          this.cartService.addCart(y).subscribe(
       (data)=>{
         console.log(data.message);
         
       }
     )
+    }
+    
+    
+
     
       }
       addCart2(x:any){
@@ -71,11 +83,17 @@ export class ShopSingleUserComponent implements OnInit {
         let z = (this.shopS.price * this.requestForm.value.number)
         y.somme = z
         
-        this.cartService2.addCart(y).subscribe(
-          (data)=>{
-            console.log(data.message);
-            
-          }
-        )
+        if (this.requestForm.value.number > this.shopS.quantity) {
+          this.msgError = "number"
+          console.log(this.msgError);
+        } else {
+          this.cartService2.addCart(y).subscribe(
+            (data)=>{
+              console.log(data.message);
+              
+            }
+          )
+        }
+
       }
 }

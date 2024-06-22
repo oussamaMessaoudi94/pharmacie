@@ -58,4 +58,8 @@ export class CartUserComponent implements OnInit {
       }
     )
   }
+
+  checkout(){
+
+  }
 }

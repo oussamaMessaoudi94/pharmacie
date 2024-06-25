@@ -50,14 +50,15 @@ export class CartUserComponent implements OnInit {
     )
   }
 
-  deleteAll(){
-    this.cartService.deleteAll().subscribe(
-      (data)=>{
-        console.log('here', data.message);
-        location.reload()
-      }
-    )
-  }
+  // deleteAll(){
+  //   this.cartService.deleteAll().subscribe(
+  //     (data)=>{
+  //       console.log('here', data.message);
+  //       location.reload()
+  //     }
+  //   )
+  // }
+  
 
   checkout(){
 

@@ -51,6 +51,7 @@ export class ShopSingleUserComponent implements OnInit {
     let z = (this.shopS.price * this.requestForm.value.number)
     y.somme = z
 
+    this.shopS.quantity = this.shopS.quantity - (this.requestForm.value.number)
     if (this.requestForm.value.number > this.shopS.quantity) {
       this.msgError = "number"
       console.log(this.msgError);
@@ -59,6 +60,12 @@ export class ShopSingleUserComponent implements OnInit {
           this.cartService.addCart(y).subscribe(
       (data)=>{
         console.log(data.message);
+        
+      }
+    )
+    this.productService.editProduct(this.shopS).subscribe(
+      (data)=>{
+        console.log('UPDATE');
         
       }
     )

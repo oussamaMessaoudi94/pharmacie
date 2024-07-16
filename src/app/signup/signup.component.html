@@ -36,7 +36,6 @@
                   <div *ngIf="signupForm.controls['email'].errors?.['email']" style="color: red;">Email is not correct</div>
                 </div>
             </div>
-            <span id="emailError"></span>
             <div class="col-md-12 form-group">
               <input type="password" class="form-control" id="password" formControlName="password" required="required" name="name" placeholder="Password"
                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
@@ -52,7 +51,6 @@
                 <div *ngIf="signupForm.controls['confPwd'].invalid && (signupForm.controls['confPwd'].dirty || signupForm.controls['confPwd'].touched)">
                   <div *ngIf="signupForm.controls['confPwd'].errors?.['required']" style="color: red;">Password is empty</div>
                 </div>
-                <span id='message'></span>
             </div>
             <div class="col-md-12 form-group">
               <input type="tel" class="form-control" id="tel" formControlName="tel" required="required" name="name" placeholder="Tel"

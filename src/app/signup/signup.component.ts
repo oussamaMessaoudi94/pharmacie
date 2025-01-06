@@ -26,6 +26,9 @@ signupForm!: FormGroup
 
 
   signup(x:any){
+    // if (!(this.signupForm.value.name) || (this.signupForm.controls['email'].errors?.['email']) || (this.signupForm.controls['password'].errors?.['minlength'])) {
+    //   alert('nooo')
+    // }
 this.signupService.signup(this.signupForm.value).subscribe(
   (data)=>{
     console.log('success', data.message);
